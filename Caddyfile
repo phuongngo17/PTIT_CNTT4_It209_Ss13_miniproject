@@ -1,0 +1,13 @@
+{
+    auto_https disable_redirects
+}
+
+103-72-57-81.sslip.io {
+    encode zstd gzip
+    tls {
+        issuer acme {
+            disable_http_challenge
+        }
+    }
+    reverse_proxy frontend:80
+}
